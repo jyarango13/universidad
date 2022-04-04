@@ -26,11 +26,115 @@ public class FormArquitecto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jtxtCodigo = new javax.swing.JTextField();
+        jcbxCondicionContrato = new javax.swing.JComboBox<>();
+        jcbxTipoAfiliacion = new javax.swing.JComboBox<>();
+        jcbxEspecialidad = new javax.swing.JComboBox<>();
+        jcbxTipoActividad = new javax.swing.JComboBox<>();
+        jbtnLimpiar = new javax.swing.JButton();
+        jbtnRegistrar = new javax.swing.JButton();
+        jtxtNombres = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtxaResumen = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INFORMACIÓN DEL ARQUITECTO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtxtCodigo.setBorder(javax.swing.BorderFactory.createTitledBorder("CODIGO"));
+        jPanel1.add(jtxtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 270, 50));
+
+        jcbxCondicionContrato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESTABLE", "CONTRATADO" }));
+        jcbxCondicionContrato.setBorder(javax.swing.BorderFactory.createTitledBorder("CONDICIÓN DE CONTRATO"));
+        jPanel1.add(jcbxCondicionContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 270, 60));
+
+        jcbxTipoAfiliacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AFP", "SNP" }));
+        jcbxTipoAfiliacion.setBorder(javax.swing.BorderFactory.createTitledBorder("TIPO AFILIACIÓN"));
+        jPanel1.add(jcbxTipoAfiliacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 270, 60));
+
+        jcbxEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESTRUCTURAS", "RECURSOS HIDRICOS" }));
+        jcbxEspecialidad.setBorder(javax.swing.BorderFactory.createTitledBorder("ESPECIALIDAD"));
+        jPanel1.add(jcbxEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 270, 60));
+
+        jcbxTipoActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SUPERVICION DE OBRAS", "SUPERVICION DE VIAS" }));
+        jcbxTipoActividad.setBorder(javax.swing.BorderFactory.createTitledBorder("TIPO ACTIVIDAD"));
+        jPanel1.add(jcbxTipoActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 270, 60));
+
+        jbtnLimpiar.setText("LIMPIAR");
+        jbtnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 210, 60));
+
+        jbtnRegistrar.setText("REGISTRAR");
+        jbtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 210, 60));
+
+        jtxtNombres.setBorder(javax.swing.BorderFactory.createTitledBorder("NOMBRES"));
+        jPanel1.add(jtxtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 270, 50));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 570));
+
+        jtxaResumen.setColumns(20);
+        jtxaResumen.setRows(5);
+        jtxaResumen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESUMEN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 102, 102)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 51))); // NOI18N
+        jScrollPane2.setViewportView(jtxaResumen);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 520, 550));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
+        // TODO add your handling code here:
+//            private javax.swing.JComboBox<String> jcbxCondicionContrrato;
+//    private javax.swing.JComboBox<String> jcbxEspecialidad;
+//    private javax.swing.JComboBox<String> jcbxTipoActividad;
+//    private javax.swing.JComboBox<String> jcbxTipoAfiliacion;
+        String codigo =this.jtxtCodigo.getText(); // getText() -> obtiene el texto de un TextField
+        String nombres = this.jtxtNombres.getText();// getText() -> obtiene el texto de un TextField
+        String condContrato = this.jcbxCondicionContrato.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String especialidad = this.jcbxEspecialidad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String tipoActividad = this.jcbxTipoActividad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String tipoAfiliacion = this.jcbxTipoAfiliacion.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        //creamos el objeto de la clase jefe
+        Arquitecto arquitecto = new Arquitecto(codigo, nombres, condContrato, especialidad, tipoActividad, tipoAfiliacion);//mostramos los datos de los pagos en el TextArea
+
+        this.jtxaResumen.setText(
+                "\nCodigo                                       : " + arquitecto.codigo
+                + "\nNombres                                    : " + arquitecto.nombre
+                + "\nCondicion de Contrato              : " + arquitecto.condicionContrato
+                + "\nEspecialidad                               : " + arquitecto.especialidad
+                + "\nTipo Actividad                            : " + arquitecto.tipoActividad
+                + "\nTipo Afiliacion                            : " + arquitecto.tipoAfiliacion
+                + "\n ************* PAGOS ****************"
+                + "\nSueldo base                          : " + arquitecto.sueldoBase()
+                + "\nBonificación                          : " + arquitecto.calcularBonificacion()
+                + "\nDescuentos                          : " + arquitecto.calcularDescuento()
+                + "\nSueldo Bruto                          : " + arquitecto.sueldoBruto()
+                + "\nSueldo Neto                         : " + arquitecto.sueldoNeto());
+    }//GEN-LAST:event_jbtnRegistrarActionPerformed
+
+    private void jbtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLimpiarActionPerformed
+        //limpia los objetos para un nuevo ingreso de datos
+        this.jtxtCodigo.setText(""); // setText("") establece el texto "" sobre el TextField
+        this.jtxtNombres.setText(""); // setText("") establece el texto "" sobre el TextField
+        this.jcbxCondicionContrato.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
+        this.jcbxEspecialidad.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
+        this.jcbxTipoActividad.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
+        this.jcbxTipoAfiliacion.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
+        this.jtxaResumen.setText("");
+        this.jtxtCodigo.requestFocus(); // requestFocus() -> coloca el cursor(focus) en el objeto jtxtNombres
+    }//GEN-LAST:event_jbtnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,5 +172,16 @@ public class FormArquitecto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jbtnLimpiar;
+    private javax.swing.JButton jbtnRegistrar;
+    private javax.swing.JComboBox<String> jcbxCondicionContrato;
+    private javax.swing.JComboBox<String> jcbxEspecialidad;
+    private javax.swing.JComboBox<String> jcbxTipoActividad;
+    private javax.swing.JComboBox<String> jcbxTipoAfiliacion;
+    private javax.swing.JTextArea jtxaResumen;
+    private javax.swing.JTextField jtxtCodigo;
+    private javax.swing.JTextField jtxtNombres;
     // End of variables declaration//GEN-END:variables
 }

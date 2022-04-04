@@ -5,14 +5,14 @@ package sem1;
  */
 public class Arquitecto {
 
-    int codigo;
+    String codigo;
     String nombre;
     String condicionContrato;
     String especialidad;
     String tipoActividad;
     String tipoAfiliacion;
 
-    public Arquitecto(int codigo, String nombre, String condicionContrato, String especialidad, String tipoActividad, String tipoAfiliacion) {
+    public Arquitecto(String codigo, String nombre, String condicionContrato, String especialidad, String tipoActividad, String tipoAfiliacion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.condicionContrato = condicionContrato;
@@ -22,16 +22,16 @@ public class Arquitecto {
     }
 
     public double sueldoBase() {
-        if (condicionContrato.equals("ESTABLE") && tipoActividad.equals("OBRAS")) {
+        if (condicionContrato.equals("ESTABLE") && tipoActividad.equals("SUPERVICION DE OBRAS")) {
             return 4000;
         }
-        if (condicionContrato.equals("ESTABLE") && tipoActividad.equals("VIAS")) {
+        if (condicionContrato.equals("ESTABLE") && tipoActividad.equals("SUPERVICION DE VIAS")) {
             return 6000;
         }
-        if (condicionContrato.equals("CONTRATADO") && tipoActividad.equals("OBRAS")) {
+        if (condicionContrato.equals("CONTRATADO") && tipoActividad.equals("SUPERVICION DE OBRAS")) {
             return 2000;
         }
-        if (condicionContrato.equals("CONTRATADO") && tipoActividad.equals("VIAS")) {
+        if (condicionContrato.equals("CONTRATADO") && tipoActividad.equals("SUPERVICION DE VIAS")) {
             return 4500;
         }
         return 0;
