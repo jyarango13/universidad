@@ -57,7 +57,7 @@ public class Arquitecto {
         return 0;
     }
     double sueldoNeto(){
-        return sueldoBase()+calcularBonificacion()-calcularDescuento();
+        return (sueldoBase()-calcularDescuento())+calcularBonificacion();
     }
     double sueldoBruto(){
                 return sueldoBase()+calcularBonificacion();

@@ -100,14 +100,14 @@ public class FormArquitecto extends javax.swing.JFrame {
 //    private javax.swing.JComboBox<String> jcbxEspecialidad;
 //    private javax.swing.JComboBox<String> jcbxTipoActividad;
 //    private javax.swing.JComboBox<String> jcbxTipoAfiliacion;
-        String codigo =this.jtxtCodigo.getText(); // getText() -> obtiene el texto de un TextField
-        String nombres = this.jtxtNombres.getText();// getText() -> obtiene el texto de un TextField
+        String cod =this.jtxtCodigo.getText(); // getText() -> obtiene el texto de un TextField
+        String nom = this.jtxtNombres.getText();// getText() -> obtiene el texto de un TextField
         String condContrato = this.jcbxCondicionContrato.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
-        String especialidad = this.jcbxEspecialidad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
-        String tipoActividad = this.jcbxTipoActividad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
-        String tipoAfiliacion = this.jcbxTipoAfiliacion.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String espec = this.jcbxEspecialidad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String tipoAct = this.jcbxTipoActividad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
+        String tipoAfil = this.jcbxTipoAfiliacion.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
         //creamos el objeto de la clase jefe
-        Arquitecto arquitecto = new Arquitecto(codigo, nombres, condContrato, especialidad, tipoActividad, tipoAfiliacion);//mostramos los datos de los pagos en el TextArea
+        Arquitecto arquitecto = new Arquitecto(cod, nom, condContrato, espec, tipoAct, tipoAfil);//mostramos los datos de los pagos en el TextArea
 
         this.jtxaResumen.setText(
                 "\nCodigo                                       : " + arquitecto.codigo
