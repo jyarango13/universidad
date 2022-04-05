@@ -1,8 +1,5 @@
-package sem1;
+package Modelo;
 
-//import javax.swing.JOptionPane;
-/**
- */
 public class Arquitecto {
 
     String codigo;
@@ -56,11 +53,28 @@ public class Arquitecto {
         }
         return 0;
     }
-    double sueldoNeto(){
-        return (sueldoBase()-calcularDescuento())+calcularBonificacion();
+    double sueldoNeto() {
+        return (sueldoBase() - calcularDescuento()) + calcularBonificacion();
     }
-    double sueldoBruto(){
-                return sueldoBase()+calcularBonificacion();
+    double sueldoBruto() {
+        return sueldoBase() + calcularBonificacion();
+    }
 
+    @Override
+    public String toString(){
+                String dato="";
+                 dato+="\nCodigo                                       : " + this.codigo;
+                dato+="\nNombres                                    : " + this.nombre;
+                dato+="\nCondicion de Contrato              : " + this.condicionContrato;
+                dato+="\nEspecialidad                               : " + this.especialidad;
+                dato+="\nTipo Actividad                            : " + this.tipoActividad;
+                dato+="\nTipo Afiliacion                            : " + this.tipoAfiliacion;
+                dato+="\n ************* PAGOS ****************";
+                dato+="\nSueldo base                          : " + this.sueldoBase();
+                dato+="\nBonificación                          : " + this.calcularBonificacion();
+                dato+="\nDescuentos                          : " + this.calcularDescuento();
+                dato+="\nSueldo Bruto                          : " + this.sueldoBruto();
+                dato+="\nSueldo Neto                         : " + this.sueldoNeto();
+                return dato;
     }
 }

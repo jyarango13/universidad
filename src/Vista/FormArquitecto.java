@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package sem1;
+package Vista;
+
+import Modelo.Arquitecto;
 
 /**
  *
@@ -33,8 +35,8 @@ public class FormArquitecto extends javax.swing.JFrame {
         jcbxEspecialidad = new javax.swing.JComboBox<>();
         jcbxTipoActividad = new javax.swing.JComboBox<>();
         jbtnLimpiar = new javax.swing.JButton();
-        jbtnRegistrar = new javax.swing.JButton();
         jtxtNombres = new javax.swing.JTextField();
+        jbtnRegistrar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtxaResumen = new javax.swing.JTextArea();
 
@@ -71,6 +73,9 @@ public class FormArquitecto extends javax.swing.JFrame {
         });
         jPanel1.add(jbtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 210, 60));
 
+        jtxtNombres.setBorder(javax.swing.BorderFactory.createTitledBorder("NOMBRES"));
+        jPanel1.add(jtxtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 270, 50));
+
         jbtnRegistrar.setText("REGISTRAR");
         jbtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,9 +83,6 @@ public class FormArquitecto extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbtnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 210, 60));
-
-        jtxtNombres.setBorder(javax.swing.BorderFactory.createTitledBorder("NOMBRES"));
-        jPanel1.add(jtxtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 270, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 570));
 
@@ -96,11 +98,7 @@ public class FormArquitecto extends javax.swing.JFrame {
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
-//            private javax.swing.JComboBox<String> jcbxCondicionContrrato;
-//    private javax.swing.JComboBox<String> jcbxEspecialidad;
-//    private javax.swing.JComboBox<String> jcbxTipoActividad;
-//    private javax.swing.JComboBox<String> jcbxTipoAfiliacion;
-        String cod =this.jtxtCodigo.getText(); // getText() -> obtiene el texto de un TextField
+        String cod = this.jtxtCodigo.getText(); // getText() -> obtiene el texto de un TextField
         String nom = this.jtxtNombres.getText();// getText() -> obtiene el texto de un TextField
         String condContrato = this.jcbxCondicionContrato.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
         String espec = this.jcbxEspecialidad.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
@@ -108,23 +106,12 @@ public class FormArquitecto extends javax.swing.JFrame {
         String tipoAfil = this.jcbxTipoAfiliacion.getSelectedItem().toString(); //getSelectedItem -> obtiene el item seleccionado
         //creamos el objeto de la clase jefe
         Arquitecto arquitecto = new Arquitecto(cod, nom, condContrato, espec, tipoAct, tipoAfil);//mostramos los datos de los pagos en el TextArea
-
-        this.jtxaResumen.setText(
-                "\nCodigo                                       : " + arquitecto.codigo
-                + "\nNombres                                    : " + arquitecto.nombre
-                + "\nCondicion de Contrato              : " + arquitecto.condicionContrato
-                + "\nEspecialidad                               : " + arquitecto.especialidad
-                + "\nTipo Actividad                            : " + arquitecto.tipoActividad
-                + "\nTipo Afiliacion                            : " + arquitecto.tipoAfiliacion
-                + "\n ************* PAGOS ****************"
-                + "\nSueldo base                          : " + arquitecto.sueldoBase()
-                + "\nBonificación                          : " + arquitecto.calcularBonificacion()
-                + "\nDescuentos                          : " + arquitecto.calcularDescuento()
-                + "\nSueldo Bruto                          : " + arquitecto.sueldoBruto()
-                + "\nSueldo Neto                         : " + arquitecto.sueldoNeto());
+        //Imprimo el metodo toString que imprime los datos de la clase
+        this.jtxaResumen.setText(arquitecto.toString());
+        limpiarFormulario();
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
-    private void jbtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLimpiarActionPerformed
+    private void limpiarFormulario() {
         //limpia los objetos para un nuevo ingreso de datos
         this.jtxtCodigo.setText(""); // setText("") establece el texto "" sobre el TextField
         this.jtxtNombres.setText(""); // setText("") establece el texto "" sobre el TextField
@@ -132,6 +119,9 @@ public class FormArquitecto extends javax.swing.JFrame {
         this.jcbxEspecialidad.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
         this.jcbxTipoActividad.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
         this.jcbxTipoAfiliacion.setSelectedIndex(0);//setSelectedIndex(0) establece el indice seleccion en 0(primer item)
+    }
+    private void jbtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLimpiarActionPerformed
+        limpiarFormulario();
         this.jtxaResumen.setText("");
         this.jtxtCodigo.requestFocus(); // requestFocus() -> coloca el cursor(focus) en el objeto jtxtNombres
     }//GEN-LAST:event_jbtnLimpiarActionPerformed

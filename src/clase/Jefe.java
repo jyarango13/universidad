@@ -1,4 +1,4 @@
-package sem1;
+package clase;
 
 /**
  */
